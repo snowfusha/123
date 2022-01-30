@@ -8,9 +8,12 @@
         <entry key="..\:/AndroidStudioProjects/QUIZZAPP/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19444444444444445" />
         <entry key="..\:/AndroidStudioProjects/QUIZZAPP/app/src/main/res/drawable/selected_option_border_bg.xml" value="0.14629629629629629" />
         <entry key="..\:/AndroidStudioProjects/QUIZZAPP/app/src/main/res/drawable/wrong_option_border_bg.xml" value="0.14629629629629629" />
-        <entry key="..\:/AndroidStudioProjects/QUIZZAPP/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/QUIZZAPP/app/src/main/res/layout/activity_quiz_questions.xml" value="0.13559322033898305" />
-        <entry key="..\:/AndroidStudioProjects/QUIZZAPP/app/src/main/res/layout/activity_result.xml" value="0.14953271028037382" />
+        <entry key="..\:/AndroidStudioProjects/QUIZZAPP/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/QUIZZAPP/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/QUIZZAPP/app/src/main/res/layout/activity_quiz_questions.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/QUIZZAPP/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/QUIZZAPP/app/src/main/res/layout/activity_reset.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/QUIZZAPP/app/src/main/res/layout/activity_result.xml" value="0.25" />
       </map>
     </option>
   </component>
