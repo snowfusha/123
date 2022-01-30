@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "114119838815",
+    "project_id": "register-470c2",
+    "storage_bucket": "register-470c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114119838815:android:65d6574fb6843ac04e1fea",
+        "android_client_info": {
+          "package_name": "com.example.quizzapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114119838815-tp7tg9r91oue83m50dfummcvahikgoj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEAZrZLQKciW6M-c2NMgJJaRQuBOpbc48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "114119838815-tp7tg9r91oue83m50dfummcvahikgoj0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114119838815:android:3e87fd0e2963a63d4e1fea",
+        "android_client_info": {
+          "package_name": "com.example.registeer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114119838815-tp7tg9r91oue83m50dfummcvahikgoj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEAZrZLQKciW6M-c2NMgJJaRQuBOpbc48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "114119838815-tp7tg9r91oue83m50dfummcvahikgoj0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
