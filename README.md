@@ -8,7 +8,8 @@ And it also has its game which has:
 * The page where you enter your username
 * The quiz itself which shows you a flag and gives you four answers 
 * The results page which shows you the amount of correct answers
-Instructions: 
+  
+ Instructions: 
 After Installing and opening the app the user will need to create an account with their mail address and their chosen password. 
 If the user already has an account they can sign in or change their password. 
 When user signs in the will need to choose their username and after that they can start playing. 
