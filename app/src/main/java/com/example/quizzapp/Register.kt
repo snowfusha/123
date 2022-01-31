@@ -6,83 +6,75 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
+import android.content.Intent
+import android.util.Log
+
 
 class Register : AppCompatActivity() {
+
 
     private lateinit var editTextEmail: EditText
     private lateinit var editTextPassword: EditText
     private lateinit var editTextPassword2: EditText
-    private lateinit var buttonRegister: Button
-
+    private lateinit var buttonSubmit: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_register)
+
         init()
-        init2()
+        registerListener()
+
     }
 
-    private fun init2() {
-        buttonRegister.setOnClickListener {
-            val register = editTextEmail.text.toString()
-            val password1 = editTextPassword.text.toString()
+    private fun init() {
+        editTextEmail = findViewById(R.id.editTextEmail)
+        editTextPassword = findViewById(R.id.editTextPassword)
+        editTextPassword2 = findViewById(R.id.editTextPassword2)
+        buttonSubmit = findViewById(R.id.buttonRegister)
+
+    }
+
+    private fun registerListener() {
+
+        buttonSubmit.setOnClickListener {
+
+            val email = editTextEmail.text.toString()
+            val password = editTextPassword.text.toString()
             val password2 = editTextPassword2.text.toString()
-            if (register.isEmpty() or password1.isEmpty() or password2.isEmpty()) {
-                Toast.makeText(this, "საჭიროა სარეგისტრაციო ველების შევსება", Toast.LENGTH_LONG)
+
+            if (email.isEmpty() || password.isEmpty() || password2.isEmpty()) {
+                Toast.makeText(this, "FILL LINES!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            } else if (password != password2) {
+                Toast.makeText(this, "Passwords must be same!", Toast.LENGTH_SHORT)
                     .show()
                 return@setOnClickListener
-
-            } else if (!register.contains("@")) {
-                Toast.makeText(this, "იმეილისთვის საჭიროა ძაღლუკის სიმბოლო - @", Toast.LENGTH_LONG)
+            } else if (!email.contains("@") or !email.contains(".")) {
+                Toast.makeText(this, "Incorrect mail!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            } else if (password.length < 9) {
+                Toast.makeText(this, "Password must contain 9 symbols!", Toast.LENGTH_SHORT)
                     .show()
                 return@setOnClickListener
-
-
-            } else if (!register.contains(".")) {
-                Toast.makeText(this, "იმეილისთვის საჭიროა წერტილი", Toast.LENGTH_LONG).show()
-                return@setOnClickListener
-            } else if (password1.length <= 8) {
-
-                Toast.makeText(this, "პაროლი უნდა შეიცავდეს მინიმუმ 9 სიმბოლოს", Toast.LENGTH_SHORT)
-                    .show()
-
-                return@setOnClickListener
-            } else if (!password1.contains("1") && !password1.contains("2") && !password1.contains(
-                    "3"
-                ) &&
-                !password1.contains("4") && !password1.contains("5") && !password1.contains(
-                    "6"
-                ) &&
-                !password1.contains("7") && !password1.contains("8") && !password1.contains(
-                    "9"
-                ) &&
-                !password1.contains("0")
-            ) {
-
-                Toast.makeText(this, "პაროლს უნდა ჰქონდეს ციფრები", Toast.LENGTH_SHORT).show()
-
-                return@setOnClickListener
-            } else if (password1 != password2) {
-
-
-                Toast.makeText(this, "პაროლები უნდა იყოს ერთნაირი", Toast.LENGTH_SHORT).show()
-
-                return@setOnClickListener
-            } else {
-                Toast.makeText(this,"ვსიო ჩემო ძმაო ან დაო , ან ბიძაშვილო,ან კაციტა",Toast.LENGTH_LONG).show()
-                FirebaseAuth.getInstance()
-                    .createUserWithEmailAndPassword(register, password1)
-                    .addOnCompleteListener{task ->
-                        if(task.isSuccessful){
-                            Toast.makeText(this, "თქვენ წარმატებით დარეგისტრირდით!", Toast.LENGTH_SHORT).show()
-                            finish()
-                        }
-                    }
-
-
-
+            }else if (email.length<10) {
+                Toast.makeText(this, "Incorrect mail!", Toast.LENGTH_SHORT).show()
             }
+
+
+
+            FirebaseAuth.getInstance()
+                .createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener{task ->
+                    if(task.isSuccessful){
+                        val intent = Intent(this, Login::class.java)
+                        startActivity(intent)
+                    }else {
+                        Toast.makeText(this, "error!", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+
 
         }
 
@@ -90,13 +82,8 @@ class Register : AppCompatActivity() {
 
     }
 
-    private fun init() {
 
-        editTextEmail = findViewById(R.id.editTextEmail)
-        editTextPassword = findViewById(R.id.editTextPassword)
-        editTextPassword2 = findViewById(R.id.editTextPassword2)
-        buttonRegister = findViewById(R.id.buttonRegister)
 
-    }
+
+
 }
-
